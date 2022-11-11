@@ -13,3 +13,7 @@ app.listen(4000, function (erro) {
 app.get('/', function (req, res) {
   res.end(fs.readFileSync('paginaInicial.html'))
 })
+
+app.get('/series', function (req, res) {
+  res.end(fs.readFileSync('series.html'))
+})
