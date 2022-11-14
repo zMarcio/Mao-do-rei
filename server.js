@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const fs = require('fs')
 
-app.listen(4000, function (erro) {
+app.listen(4040, function (erro) {
   if (erro) {
     console.log('Erro ao iniciar')
   } else {
@@ -17,3 +17,7 @@ app.get('/', function (req, res) {
 app.get('/series', function (req, res) {
   res.end(fs.readFileSync('series.html'))
 })
+
+app.get('/filmes', function (req, res) {
+  res.end(fs.readFileSync('Filme.html'))
+})  
