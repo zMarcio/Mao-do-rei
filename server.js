@@ -23,3 +23,15 @@ app.get('/series', function (req, res) {
 app.get('/filmes', function (req, res) {
   res.end(fs.readFileSync('htmls/Filme.html'))
 })
+
+app.get('/TaxiDriver', function (req,res){
+  res.end(fs.readFileSync('htmls/descriçãoTaxiDriver.html'))
+})
+
+app.get('/Cruella', function (req,res){
+  res.end(fs.readFileSync('htmls/descriçãoCruella.html'))
+})
+
+app.get('/Agua', function (req,res){
+  res.end(fs.readFileSync('htmls/descriçãoFormaDaÁgua.html'))
+})
