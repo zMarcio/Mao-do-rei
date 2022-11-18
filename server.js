@@ -39,3 +39,12 @@ app.get('/Cruella', function (req, res) {
 app.get('/Agua', function (req, res) {
   res.end(fs.readFileSync('htmls/descriçãoFormaDaÁgua.html'))
 })
+
+app.get('/play', function (req, res) {
+  res.end(fs.readFileSync('htmls/play.html'))
+})
+
+app.get('/favoritos', function (req, res) {
+  res.end(fs.readFileSync('htmls/favoritos.html'))
+})
+
