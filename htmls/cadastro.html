@@ -1,0 +1,50 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mão do Rei</title>
+  <header
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+    <div
+      class="logo"
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <img src="/logo.png" alt="Logo Mão do Rei" style="width: 117px" />
+      <h1 style="display: inline-flex">Mão do Rei</h1>
+    </div>
+    <div>
+      <h3 style="display: inline">Login |</h3>
+      <h3 style="display: inline">Cadastre-se</h3>
+    </div>
+  </header>
+  <hr />
+  <div id="busca" style="display: inline">
+    <h4 style="display: inline-flex">Buscar</h4>
+    <input type="text" style="width: 500px" />
+  </div>
+  <hr />
+  <body>
+    <h3>CADASTRE-SE</h3>
+    <div id="nome">
+      <h4 style="display: inline-flex">Nome</h4>
+      <input id="nomeDigitado" type="text" style="width: 300px" />
+    </div>
+    <div id="senha">
+      <h4 style="display: inline-flex">Senha</h4>
+      <input id="senhaDigitada" type="text" style="width: 300px" />
+    </div>
+    <div id="confirmarSenha">
+      <h4 style="display: inline-flex">Confirmar senha</h4>
+      <input id="confirmacaoSenha" type="text" style="width: 300px" />
+    </div>
+    <button onclick="cadastro()">Cadastrar</button>
+    <h4 id="cadastroOK" style="display: none">
+      Cadastro realizado com sucesso!
+    </h4>
+    <h4 id="cadastroFalhou" style="display: none">
+      As senhas não coincidem. Não foi possível realizar o cadastro.
+    </h4>
+    <script src="/funcoes.js"></script>
+  </body>
+</head>

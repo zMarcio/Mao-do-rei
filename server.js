@@ -48,3 +48,6 @@ app.get('/favoritos', function (req, res) {
   res.end(fs.readFileSync('htmls/favoritos.html'))
 })
 
+app.get('/cadastro', function (req, res) {
+  res.end(fs.readFileSync('htmls/cadastro.html'))
+})
