@@ -51,3 +51,7 @@ app.get('/favoritos', function (req, res) {
 app.get('/cadastro', function (req, res) {
   res.end(fs.readFileSync('htmls/cadastro.html'))
 })
+
+app.get('/funcoes.js', function (req, res) {
+  res.end(fs.readFileSync('./funcoes.js'))
+})

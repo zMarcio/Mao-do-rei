@@ -25,26 +25,17 @@
   </div>
   <hr />
   <body>
-    <h3>CADASTRE-SE</h3>
+    <h3>LOGIN</h3>
     <div id="nome">
       <h4 style="display: inline-flex">Nome</h4>
-      <input id="nomeDigitado" type="text" style="width: 300px" />
+      <input id="nomeDigitadoLogin" type="text" style="width: 300px" />
     </div>
     <div id="senha">
       <h4 style="display: inline-flex">Senha</h4>
-      <input id="senhaDigitada" type="password" style="width: 300px" />
-    </div>
-    <div id="confirmarSenha">
-      <h4 style="display: inline-flex">Confirmar senha</h4>
-      <input id="confirmacaoSenha" type="password" style="width: 300px" />
+      <input id="senhaDigitadaLogin" type="password" style="width: 300px" />
     </div>
     <script src="./funcoes.js"></script>
-    <button onclick="cadastro()">Cadastrar</button>
-    <h4 id="cadastroOK" style="display: none">
-      Cadastro realizado com sucesso!
-    </h4>
-    <h4 id="cadastroFalhou" style="display: none">
-      As senhas não coincidem. Não foi possível realizar o cadastro.
+    <button onclick="login()">Fazer login</button>
     </h4>
   </body>
 </head>
