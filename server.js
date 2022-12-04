@@ -75,3 +75,7 @@ app.get('/funcoes.js', function (req, res) {
 app.get('/login', function (req, res) {
   res.end(fs.readFileSync('htmls/login.html'))
 })
+
+app.get('/usuario', function (req, res) {
+  res.end(fs.readFileSync('htmls/userPage.html'))
+})

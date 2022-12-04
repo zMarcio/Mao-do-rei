@@ -3,6 +3,9 @@
 // const localUsersList = getUsersList
 // const localPasswordsList = getPasswordsList
 
+const localUsersList = []
+const localPasswordsList = []
+
 function cadastro() {
   let input1 = document.querySelector('#nomeDigitado')
   let nomeDigitado = input1.value
@@ -21,14 +24,14 @@ function cadastro() {
 
   if (
     localUsersList.includes(nomeDigitado) ||
-    localPassowordsList.includes(senhaDigitada)
+    localPasswordsList.includes(senhaDigitada)
   ) {
     if (localUsersList.includes(nomeDigitado)) {
       cadastroOK.style.display = 'none'
       cadastroFalhou.style.display = 'none'
       nomeNaoDisponivel.style.display = 'block'
     }
-    if (localPassowordsList.includes(senhaDigitada)) {
+    if (localPasswordsList.includes(senhaDigitada)) {
       cadastroOK.style.display = 'none'
       cadastroFalhou.style.display = 'none'
       senhaNaoDisponivel.style.display = 'block'
@@ -36,13 +39,13 @@ function cadastro() {
   } else {
     if (senhaDigitada == confirmacaoSenha) {
       localUsersList.push(nomeDigitado)
-      localPassowordsList.push(senhaDigitada)
+      localPasswordsList.push(senhaDigitada)
       cadastroOK.style.display = 'block'
       cadastroFalhou.style.display = 'none'
       senhaNaoDisponivel.style.display = 'none'
       nomeNaoDisponivel.style.display = 'none'
       console.log('Users list: ' + localUsersList)
-      console.log('Passwords list: ' + localPassowordsList)
+      console.log('Passwords list: ' + localPasswordsList)
     } else {
       cadastroFalhou.style.display = 'block'
       cadastroOK.style.display = 'none'
@@ -52,7 +55,10 @@ function cadastro() {
   }
 }
 
-function login() {
+function verificarLogin() {
+  const localUsersList = ['teste 1', 'teste 2', 'teste 3']
+  const localPasswordsList = ['123', '1234', '12345']
+
   let input1 = document.querySelector('#nomeDigitadoLogin')
   let nomeDigitado = input1.value
 
@@ -68,7 +74,7 @@ function login() {
     let indexNome = localUsersList.indexOf(nomeDigitado)
     let indexSenha = localPasswordsList.indexOf(senhaDigitada)
     if (indexNome == indexSenha) {
-      //realizar login
+      logar()
     } else {
       loginFalhou.style.display = 'block'
       console.log('Usuário ou senha incorretos')
@@ -78,3 +84,10 @@ function login() {
     console.log('Usuário ou senha incorretos')
   }
 }
+
+function logar() {
+  //adicionar fotinha de perfil em todas as rotas
+  //"personalizar" userPage?
+}
+
+function sair() {}

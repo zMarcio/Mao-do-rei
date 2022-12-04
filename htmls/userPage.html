@@ -35,32 +35,18 @@
   </div>
   <hr />
   <body>
-    <h3>CADASTRE-SE</h3>
-    <div id="nome">
-      <h4 style="display: inline-flex">Nome</h4>
-      <input id="nomeDigitado" type="text" style="width: 300px" />
+    <h3>PÁGINA DO USUÁRIO</h3>
+    <div id="perfil" style="display: inline-flex">
+      <img
+        src="blankProfilePhoto.png"
+        alt="Foto de perfil - default"
+        style="width: 150px"
+      />
+      <div id="descriçao" style="padding-left: 10px">
+        <h3>Teste 1</h3>
+        <h4>Usuário desde 06/12/2022.</h4>
+        <a href="/favoritos">Visualizar lista de favoritos</a>
+      </div>
     </div>
-    <div id="senha">
-      <h4 style="display: inline-flex">Senha</h4>
-      <input id="senhaDigitada" type="password" style="width: 300px" />
-    </div>
-    <div id="confirmarSenha">
-      <h4 style="display: inline-flex">Confirmar senha</h4>
-      <input id="confirmacaoSenha" type="password" style="width: 300px" />
-    </div>
-    <script src="/funcoes.js"></script>
-    <button onclick="cadastro()">Cadastrar</button>
-    <h4 id="cadastroOK" style="display: none">
-      Cadastro realizado com sucesso!
-    </h4>
-    <h4 id="cadastroFalhou" style="display: none">
-      As senhas não coincidem. Não foi possível realizar o cadastro.
-    </h4>
-    <h4 id="nomeNaoDisponivel" style="display: none">
-      Esse nome de usuário não está disponível.
-    </h4>
-    <h4 id="senhaNaoDisponivel" style="display: none">
-      Essa senha não está disponível.
-    </h4>
   </body>
 </head>
