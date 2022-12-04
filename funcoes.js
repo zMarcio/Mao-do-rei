@@ -1,5 +1,7 @@
-const usersList = []
-const passwordsList = []
+//import { getUsersList, getPasswordsList } from '/server.js'
+
+// const localUsersList = getUsersList
+// const localPasswordsList = getPasswordsList
 
 function cadastro() {
   let input1 = document.querySelector('#nomeDigitado')
@@ -11,24 +13,41 @@ function cadastro() {
   let input3 = document.querySelector('#confirmacaoSenha')
   let confirmacaoSenha = input3.value
 
-  if (usersList.includes(nomeDigitado)) {
-    console.log('Nome de usuário não disponível')
-  } if (passwordsList.includes(senhaDigitada)) {
-    console.log("Senha não disponível")
+  let cadastroOK = document.getElementById('cadastroOK')
+  let cadastroFalhou = document.getElementById('cadastroFalhou')
+
+  let nomeNaoDisponivel = document.getElementById('nomeNaoDisponivel')
+  let senhaNaoDisponivel = document.getElementById('senhaNaoDisponivel')
+
+  if (
+    localUsersList.includes(nomeDigitado) ||
+    localPassowordsList.includes(senhaDigitada)
+  ) {
+    if (localUsersList.includes(nomeDigitado)) {
+      cadastroOK.style.display = 'none'
+      cadastroFalhou.style.display = 'none'
+      nomeNaoDisponivel.style.display = 'block'
+    }
+    if (localPassowordsList.includes(senhaDigitada)) {
+      cadastroOK.style.display = 'none'
+      cadastroFalhou.style.display = 'none'
+      senhaNaoDisponivel.style.display = 'block'
+    }
   } else {
     if (senhaDigitada == confirmacaoSenha) {
-      usersList.push(nomeDigitado)
-      passwordsList.push(senhaDigitada)
-      let cadastroOK = document.getElementById('cadastroOK')
+      localUsersList.push(nomeDigitado)
+      localPassowordsList.push(senhaDigitada)
       cadastroOK.style.display = 'block'
-      let cadastroFalhou = document.getElementById('cadastroFalhou')
       cadastroFalhou.style.display = 'none'
-      console.log(usersList, passwordsList)
+      senhaNaoDisponivel.style.display = 'none'
+      nomeNaoDisponivel.style.display = 'none'
+      console.log('Users list: ' + localUsersList)
+      console.log('Passwords list: ' + localPassowordsList)
     } else {
-      let cadastroFalhou = document.getElementById('cadastroFalhou')
       cadastroFalhou.style.display = 'block'
-      let cadastroOK = document.getElementById('cadastroOK')
       cadastroOK.style.display = 'none'
+      senhaNaoDisponivel.style.display = 'none'
+      nomeNaoDisponivel.style.display = 'none'
     }
   }
 }
@@ -40,15 +59,22 @@ function login() {
   let input2 = document.querySelector('#senhaDigitadaLogin')
   let senhaDigitada = input2.value
 
-  if (usersList.includes(nomeDigitado) && (passwordsList.includes(senhaDigitada))) {
-    let indexNome = usersList.indexOf(nomeDigitado)
-    let indexSenha = usersList.indexOf(senhaDigitada)
+  let loginFalhou = document.getElementById('loginFalhou')
+
+  if (
+    localUsersList.includes(nomeDigitado) &&
+    localPasswordsList.includes(senhaDigitada)
+  ) {
+    let indexNome = localUsersList.indexOf(nomeDigitado)
+    let indexSenha = localPasswordsList.indexOf(senhaDigitada)
     if (indexNome == indexSenha) {
       //realizar login
     } else {
-      console.log("Usuário ou senha incorretos")
+      loginFalhou.style.display = 'block'
+      console.log('Usuário ou senha incorretos')
     }
   } else {
-    console.log("Usuário ou senha incorretos")
+    loginFalhou.style.display = 'block'
+    console.log('Usuário ou senha incorretos')
   }
 }

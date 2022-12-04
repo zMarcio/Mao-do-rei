@@ -1,5 +1,24 @@
 {
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "maodorei",
+  "version": "1.0.0",
+  "main": "funcoes.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zMarcio/Mao-do-rei.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zMarcio/Mao-do-rei/issues"
+  },
+  "homepage": "https://github.com/zMarcio/Mao-do-rei#readme",
+  "description": ""
 }

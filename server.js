@@ -2,6 +2,22 @@ const express = require('express')
 const app = express()
 const fs = require('fs')
 
+const usersList = []
+const passwordsList = []
+
+function getUsersList() {
+  return usersList
+}
+
+function getPasswordsList() {
+  return passwordsList
+}
+
+exports = {
+  getUsersList,
+  getPasswordsList
+}
+
 app.listen(4040, function (erro) {
   if (erro) {
     console.log('Erro ao iniciar')
@@ -54,4 +70,8 @@ app.get('/cadastro', function (req, res) {
 
 app.get('/funcoes.js', function (req, res) {
   res.end(fs.readFileSync('./funcoes.js'))
+})
+
+app.get('/login', function (req, res) {
+  res.end(fs.readFileSync('htmls/login.html'))
 })
