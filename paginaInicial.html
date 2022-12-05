@@ -5,6 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mão do Rei</title>
+    <style>
+      div.logado ul {
+        list-style-type: none;
+        padding-inline-start: 10px;
+        margin-top: 5px;
+        background-color: whitesmoke;
+        margin-block-start: 0;
+      }
+
+      .fotoDePerfil {
+        margin-block-end: 0;
+      }
+    </style>
     <header
       style="display: flex; justify-content: space-between; align-items: center"
     >
@@ -19,9 +32,26 @@
         <img src="/logo.png" alt="Logo Mão do Rei" style="width: 117px" />
         <h1 style="display: inline-flex">Mão do Rei</h1>
       </div>
-      <div>
+      <div id="!logado" style="display: block">
         <a href="/login" style="display: flex">Login |</a>
         <a href="/cadastro" style="display: flex">Cadastre-se</a>
+      </div>
+      <div class="logado" style="display: none">
+        <img
+          onmouseover="expandirMenu()"
+          onclick="fecharMenu()"
+          src="blankProfilePhoto.png"
+          alt="Foto de perfil - default"
+          style="width: 75px"
+          class="fotoDePerfil"
+        />
+        <div id="menuUsuario" style="display: none">
+          <ul>
+            <li><a href="/consulta?usuario=1">Teste X</a></li>
+            <li><a href="/favoritos">Favoritos</a></li>
+            <li onclick="sair()">Sair</li>
+          </ul>
+        </div>
       </div>
     </header>
     <hr />
@@ -29,7 +59,7 @@
       <h4 style="display: inline-flex">Buscar</h4>
       <input type="text" style="width: 500px" />
     </div>
-    <hr />    
+    <hr />
     <h3>PÁGINA INICIAL</h3>
     <div id="menu">
       <a href="/lancamentos" style="display: flex;">Lançamentos</a>

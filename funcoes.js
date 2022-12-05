@@ -3,6 +3,9 @@
 // const localUsersList = getUsersList
 // const localPasswordsList = getPasswordsList
 
+let url = new URL('http://localhost:4040/consulta?')
+//let params = new URLSearchParams(url.search)
+
 const localUsersList = []
 const localPasswordsList = []
 
@@ -74,7 +77,7 @@ function verificarLogin() {
     let indexNome = localUsersList.indexOf(nomeDigitado)
     let indexSenha = localPasswordsList.indexOf(senhaDigitada)
     if (indexNome == indexSenha) {
-      logar()
+      logar(nomeDigitado)
     } else {
       loginFalhou.style.display = 'block'
       console.log('Usuário ou senha incorretos')
@@ -85,9 +88,31 @@ function verificarLogin() {
   }
 }
 
-function logar() {
+function logar(nomeDigitado) {
   //adicionar fotinha de perfil em todas as rotas
-  //"personalizar" userPage?
+  //"personalizar" userPage
+  if (nomeDigitado == 'teste 1') {
+    window.location.href = 'http://localhost:4040/consulta?usuario=1'
+    // url.searchParams.set('usuario', 1)
+  }
+  if (nomeDigitado == 'teste 2') {
+    window.location.href = 'http://localhost:4040/consulta?usuario=2'
+    // url.searchParams.set('usuario', 2)
+  }
+  if (nomeDigitado == 'teste 3') {
+    window.location.href = 'http://localhost:4040/consulta?usuario=3'
+    // url.searchParams.set('usuario', 3)
+  }
+}
+
+function expandirMenu() {
+  let menuUsuario = document.getElementById('menuUsuario')
+  menuUsuario.style.display = 'block'
+}
+
+function fecharMenu() {
+  let menuUsuario = document.getElementById('menuUsuario')
+  menuUsuario.style.display = 'none'
 }
 
 function sair() {}
