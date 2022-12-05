@@ -76,6 +76,17 @@ app.get('/login', function (req, res) {
   res.end(fs.readFileSync('htmls/login.html'))
 })
 
-app.get('/usuario', function (req, res) {
-  res.end(fs.readFileSync('htmls/userPage.html'))
+app.get('/consulta/', function (req, res) {
+  var usuario = req.query['usuario']
+  if (usuario == 1) {
+    res.end(fs.readFileSync('htmls/userPage1.html'))
+  }
+  if (usuario == 2) {
+    res.end(fs.readFileSync('htmls/userPage2.html'))
+  }
+  if (usuario == 3) {
+    res.end(fs.readFileSync('htmls/userPage3.html'))
+  } else {
+    res.send('Não foram recebidos parâmetros')
+  }
 })
