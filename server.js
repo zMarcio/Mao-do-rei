@@ -32,6 +32,26 @@ app.get('/', function (req, res) {
   res.end(fs.readFileSync('paginaInicial.html'))
 })
 
+app.get('/lancamentos', function(req,res){
+  res.end(fs.readFileSync('htmls/Lancamentos.html'))
+})
+
+app.get('/filmeslancamentos', function (req,res){
+  res.end(fs.readFileSync('htmls/filmeLancamento.html'))
+})
+
+app.get('/animelancamentos', function(req,res){
+  res.end(fs.readFileSync('htmls/animelancamento.html'))
+})
+
+app.get('/serielancamentos', function(req,res){
+  res.end(fs.readFileSync('htmls/serielancamento.html'))
+})
+
+app.get('/Destaques', function (req,res){
+  res.end(fs.readFileSync('htmls/destaques.html'))
+})
+
 app.get('/animes', function (req, res) {
   res.end(fs.readFileSync('htmls/aime-final.html'))
 })
