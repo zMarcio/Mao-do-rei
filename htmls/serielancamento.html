@@ -1,40 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <style>
-        .imgAjust {
-            width: 450px;
-            height: auto;
-        }
-        .imgAnime{
-                width: 450px;
-                height: auto;
-        }
-    </style></head>
-<body>
-    <h1>Series</h1>
-    <hr>
-<div class="imgAjust">
-    <h2>wandinha</h2>
-    <h3>A familía mais assombrosa da televisão ganha um nova adaptação, focando só nas aventuras de Wandinha.</h3>
-    <img src="SeriesLancamentos/wandinha.webp" alt="Wandinha" class="imgAnime">
-    <hr>
-    <h2>1899</h2>
-    <h3>O seriado alemão tem como premissa uma viagem de imigrantes europeus de diferentes partes do continente, que partem em direção à Nova York a fim de deixar suas dificuldades para trás.</h3>
-    <img src="SeriesLancamentos/1899.jpg" alt="1899" class="imgAnime">
-    <hr>
-    <h2>A Lenda do Tesouro Perdido: No Limiar da História</h2>
-    <h3>A trama acompanha uma jovem tentando descobrir a história secreta de sua família. Mas, nessa jornada, ela acaba se deparando com um tesouro perdido.</h3>
-    <img src="SeriesLancamentos/limiar.jpg" alt="A Lenda do Tesouro Perdido: No Limiar da História" class="imgAnime">
-    <hr>
-    <h2>The Witcher: A Origem</h2>
-    <h3>The Witcher: Blood Origin narra a história do primeiro Bruxo e do mundo habitado por elfos antes do extermínio.</h3>
-    <img src="SeriesLancamentos/origem.jpg" alt="The Witcher: A Origem" class="imgAnime">
-</div>
-</body>
+      .imgAjust {
+        width: 450px;
+        height: auto;
+      }
+      .imgAnime {
+        width: 450px;
+        height: auto;
+      }
+
+      div.logado ul {
+        list-style-type: none;
+        padding-inline-start: 10px;
+        margin-top: 5px;
+        background-color: whitesmoke;
+        margin-block-start: 0;
+      }
+
+      .fotoDePerfil {
+        margin-block-end: 0;
+      }
+    </style>
+  </head>
+  <script src="/funcoes.js"></script>
+  <body onload="adicionarFoto()">
+    <header
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <div
+        class="logo"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <img src="/logo.png" alt="Logo Mão do Rei" style="width: 117px" />
+        <h1 style="display: inline-flex">Mão do Rei</h1>
+      </div>
+      <nav>
+        <div id="notLogado" style="display: block">
+          <a href="/login" style="display: flex">Login |</a>
+          <a href="/cadastro" style="display: flex">Cadastre-se</a>
+        </div>
+        <div id="logado" style="display: none">
+          <img
+            onmouseover="expandirMenu()"
+            onclick="fecharMenu()"
+            src="blankProfilePhoto.png"
+            alt="Foto de perfil - default"
+            style="width: 75px"
+            class="fotoDePerfil"
+          />
+          <div id="menuUsuario" style="display: none">
+            <ul>
+              <li><a href="/consulta?usuario=1">Teste X</a></li>
+              <li><a href="/favoritos">Favoritos</a></li>
+              <li onclick="sair()">Sair</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <hr />
+    <hr />
+    <div
+      style="display: flex; justify-content: space-evenly; align-items: center"
+      id="menu superior"
+    >
+      <a href="/" style="display: inline-flex">Home</a>
+      <a href="/lancamentos" style="display: inline-flex">Lançamentos</a>
+      <a href="/filmes" style="display: inline-flex">Filmes</a>
+      <a href="/animes" style="display: inline-flex">Animes</a>
+      <a href="/series" style="display: inline-flex">Séries</a>
+    </div>
+    <hr />
+    <h1>Series lancamentos</h1>
+    <hr />
+    <div class="imgAjust">
+      <h2>wandinha</h2>
+      <h3>
+        A familía mais assombrosa da televisão ganha um nova adaptação, focando
+        só nas aventuras de Wandinha.
+      </h3>
+      <img
+        src="SeriesLancamentos/wandinha.webp"
+        alt="Wandinha"
+        class="imgAnime"
+      />
+      <hr />
+      <h2>1899</h2>
+      <h3>
+        O seriado alemão tem como premissa uma viagem de imigrantes europeus de
+        diferentes partes do continente, que partem em direção à Nova York a fim
+        de deixar suas dificuldades para trás.
+      </h3>
+      <img src="SeriesLancamentos/1899.jpg" alt="1899" class="imgAnime" />
+      <hr />
+      <h2>A Lenda do Tesouro Perdido: No Limiar da História</h2>
+      <h3>
+        A trama acompanha uma jovem tentando descobrir a história secreta de sua
+        família. Mas, nessa jornada, ela acaba se deparando com um tesouro
+        perdido.
+      </h3>
+      <img
+        src="SeriesLancamentos/limiar.jpg"
+        alt="A Lenda do Tesouro Perdido: No Limiar da História"
+        class="imgAnime"
+      />
+      <hr />
+      <h2>The Witcher: A Origem</h2>
+      <h3>
+        The Witcher: Blood Origin narra a história do primeiro Bruxo e do mundo
+        habitado por elfos antes do extermínio.
+      </h3>
+      <img
+        src="SeriesLancamentos/origem.jpg"
+        alt="The Witcher: A Origem"
+        class="imgAnime"
+      />
+    </div>
+  </body>
 </html>

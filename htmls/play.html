@@ -1,193 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        
-        img{
-      max-width: 7%;
-      max-height: 7%;
-      margin-top: 0px;
-      padding: 0px 0px;
-  }
-  .menu-principal{
-      width: 100%;
-      background-color: #252323 ;
-      height: 70px;
-  } 
-  body{
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      background-color: darkgrey;
-
-  }
-  main{
-      margin:0 auto;
-      width: 980px;
-      position: relative;
-  }
-  .logo{
-      padding: 1px;
-      width: 90%;
-      float: left;
-  }
-  .redes-sociais{
-      padding: 12px;
-     
-  }
-  .header-2{
-      background-color: ivory;
-      width: 100%;
-      border-bottom: 3px solid grey;
-      
-  }
-  .menu ul li{
-      display: inline-block;
-      color: aqua;
-      margin-left: 10px;
-     height: 60px;
-  }
-  .menu ul li a{
-      text-decoration: nome;
-      color: aqua;
-     font-size: 20px;
-     text-transform:uppercase;
-     
-  }
-  .menu{
-      width: 70%;
-      float: left;
-
-  }
- .buscar{
-  width: 30%;
-  float: right;
-  margin-top: 10px;
-  text-align: center;
-
- }
- .buscar input{
-  margin-top: 20px;
- }
- .buscar img{
-  float: left;
-  padding: 10%;
- }
- .lupa{
-  width: 20%;
-  float: right;
- }
- h1{
-  text-align: center;
-  font-style:initial;
-  font-size: 80px;
-  color: gold;
-  margin-top: 10px;
- }
- h7{
-  width: 50%;
-  float: right;
-  text-align: center;
-margin-right: auto;
-
- }
- h2{
-  text-align:center;
-  font-size: 35px;
-  color: darkred;
- }
- h3{
-  text-align:center;
-  font-size: 20px;
- }
- .botao{
-    min-width: 100%;
-    min-height: 100%;
-     text-align: center;
-    
- }
- .avaliaçao{
-    display: flex;
- }
- .star-icon{
-    list-style-type: nome;
-    border: 1px solid #fff;
-    cursor: pointer;
-    color: #ffe500;
-    height: 30px;
-    right: 30px;
-    list-style-type:none;
- }
- .star-icon::before{
-    content: "\2606";
- }
- .star-icon.ativo~.star-icon::before{
-    content: \2606;
- }
- .star-icon:hover~.star-icon::before{
-    content: "\2606";
- }.avaliaçao:hover.star-icon::before{
-    content: "\2006";
- }
+      img {
+        max-width: 7%;
+        max-height: 7%;
+        margin-top: 0px;
+        padding: 0px 0px;
+      }
+      .menu-principal {
+        width: 100%;
+        background-color: #252323;
+        height: 70px;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background-color: darkgrey;
+      }
+      main {
+        margin: 0 auto;
+        width: 980px;
+        position: relative;
+      }
+      .logo {
+        padding: 1px;
+        width: 90%;
+        float: left;
+      }
+      .redes-sociais {
+        padding: 12px;
+      }
+      .header-2 {
+        background-color: ivory;
+        width: 100%;
+        border-bottom: 3px solid grey;
+      }
+      .menu ul li {
+        display: inline-block;
+        color: aqua;
+        margin-left: 10px;
+        height: 60px;
+      }
+      .menu ul li a {
+        text-decoration: nome;
+        color: aqua;
+        font-size: 20px;
+        text-transform: uppercase;
+      }
+      .menu {
+        width: 70%;
+        float: left;
+      }
+      .buscar {
+        width: 30%;
+        float: right;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .buscar input {
+        margin-top: 20px;
+      }
+      .buscar img {
+        float: left;
+        padding: 10%;
+      }
+      .lupa {
+        width: 20%;
+        float: right;
+      }
+      h1 {
+        text-align: center;
+        font-style: initial;
+        font-size: 80px;
+        color: gold;
+        margin-top: 10px;
+      }
+      h7 {
+        width: 50%;
+        float: right;
+        text-align: center;
+        margin-right: auto;
+      }
+      h2 {
+        text-align: center;
+        font-size: 35px;
+        color: darkred;
+      }
+      h3 {
+        text-align: center;
+        font-size: 20px;
+      }
+      .botao {
+        min-width: 100%;
+        min-height: 100%;
+        text-align: center;
+      }
+      .avaliaçao {
+        display: flex;
+      }
+      .star-icon {
+        list-style-type: nome;
+        border: 1px solid #fff;
+        cursor: pointer;
+        color: #ffe500;
+        height: 30px;
+        right: 30px;
+        list-style-type: none;
+      }
+      .star-icon::before {
+        content: '\2606';
+      }
+      .star-icon.ativo ~ .star-icon::before {
+        content: \2606;
+      }
+      .star-icon:hover ~ .star-icon::before {
+        content: '\2606';
+      }
+      .avaliaçao:hover.star-icon::before {
+        content: '\2006';
+      }
     </style>
-  
-</head>
-<body>
+  </head>
   <header class="menu-principal">
-      <main >
-          
+    <main>
       <div class="heard-1">
-      <div class="logo">
-          <img src="/logo.png"width=60%>
+        <div class="logo">
+          <img src="/logo.png" width="60%" />
+        </div>
+        <!-- <div class="redes-sociais">
+          <img src="/redes-sociais.png" width="60%" />
+        </div> -->
       </div>
-            
-      <div class="redes-sociais">
-          <img src="/redes-sociais.png"width="60%">
-          
-      </div>
-  </div>
-</main>
+      <nav>
+        <div id="notLogado" style="display: block">
+          <a href="/login" style="display: flex; color: white">Login |</a>
+          <a href="/cadastro" style="display: flex; color: white"
+            >Cadastre-se</a
+          >
+        </div>
+        <div id="logado" style="display: none">
+          <img
+            onmouseover="expandirMenu()"
+            onclick="fecharMenu()"
+            src="blankProfilePhoto.png"
+            alt="Foto de perfil - default"
+            style="width: 75px"
+            class="fotoDePerfil"
+          />
+          <div id="menuUsuario" style="display: none">
+            <ul>
+              <li><a href="/consulta?usuario=1">Teste X</a></li>
+              <li><a href="/favoritos">Favoritos</a></li>
+              <li onclick="sair()">Sair</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </main>
   </header>
-  <main>
-  
-</head></body>
-
-<body>
+  <script src="/funcoes.js"></script>
+  <body onload="adicionarFoto()">
     <h1>começando a diversão</h1>
     <h2>MÃO DO REI</h2>
-    
     <div class="botao">
-        <img src="/PLAY1.PNG" width="205" height="125" />
-        <div><h3><a href=""></a><img src="/black clouver.jpg"width=100%><a href="./play.html"><button> play </button></a></a><P>Descrição:</P>A história se centra em um jovem chamado Asta, nascido sem poder mágico no reino de Clover (algo inédito), mas com sua ambição, habilidades recém-descobertas e amigos, pretende tornar-se o próximo Rei Mago. Capa do primeiro volume do mangá. Ação, Aventura, Fantasia,Comédia.<a href="/favoritos">Clique para adicionar aos favoritos.</a></h3></div>
-        <div><h3><a href=""></a><a href="./busca.html"><button> busca </button></a></a></a></h3></div>
+      <img src="/PLAY1.PNG" width="205" height="125" />
+      <div>
+        <h3>
+          <img src="/black clouver.jpg" width="100%" />
+          <a href="/play">
+            <button>play</button>
+          </a>
+          <p>
+            Descrição: A história se centra em um jovem chamado Asta, nascido
+            sem poder mágico no reino de Clover (algo inédito), mas com sua
+            ambição, habilidades recém-descobertas e amigos, pretende tornar-se
+            o próximo Rei Mago. Capa do primeiro volume do mangá. Ação,
+            Aventura, Fantasia,Comédia.
+          </p>
+          <a href="/favoritos">Clique para adicionar aos favoritos.</a>
+        </h3>
+      </div>
+      <div>
+        <!-- <h3>
+          <a href=""></a>
+          <a href="./busca.html">
+            <button>busca</button>
+          </a>
+        </h3> -->
+      </div>
     </div>
-  <p>AVALIE SEU CONTEÚDO<p>
-  <button> enviar</button>
-  <ul class="avaliaçao">
-  <li class="star-icon ativo"data-avaliaçao="1"></li>
-  <li class="star-icon"data-avaliaçao="2"></li>
-  <li class="star-icon"data-avaliaçao="3"></li>
-  <li class="star-icon"data-avaliaçao="4"></li>
-  <li class="star-icon"data-avaliaçao="5"></li>
-</ul>
-    
-    <script>
-    var stars = document.querySelectorAll('star-icon');
-    document.addEventListener('click',function(e){
-        var classStar = e.target.classList;
-        if(!classStar.contains('ativo')){
-            stars.forEach(function(star) {
-                star.classList.remove('ativo');
-            });
-            classStar.add('ativo')
-            console.log(e.target.getAttribute('data-avliaçao'))
-        }
-    });
+    <p>AVALIE SEU CONTEÚDO</p>
+    <p>
+      <button>enviar</button>
+    </p>
 
+    <ul class="avaliaçao">
+      <li class="star-icon ativo" data-avaliaçao="1"></li>
+      <li class="star-icon" data-avaliaçao="2"></li>
+      <li class="star-icon" data-avaliaçao="3"></li>
+      <li class="star-icon" data-avaliaçao="4"></li>
+      <li class="star-icon" data-avaliaçao="5"></li>
+    </ul>
+
+    <script>
+      var stars = document.querySelectorAll('star-icon')
+      document.addEventListener('click', function (e) {
+        var classStar = e.target.classList
+        if (!classStar.contains('ativo')) {
+          stars.forEach(function (star) {
+            star.classList.remove('ativo')
+          })
+          classStar.add('ativo')
+          console.log(e.target.getAttribute('data-avliaçao'))
+        }
+      })
     </script>
-</body>
+  </body>
 </html>

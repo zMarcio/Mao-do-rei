@@ -3,50 +3,84 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mão do Rei</title>
-  <header
+  <style>
+    div.logado ul {
+      list-style-type: none;
+      padding-inline-start: 10px;
+      margin-top: 5px;
+      background-color: whitesmoke;
+      margin-block-start: 0;
+    }
+
+    .fotoDePerfil {
+      margin-block-end: 0;
+    }
+  </style>
+</head>
+<header
+  style="display: flex; justify-content: space-between; align-items: center"
+>
+  <div
+    class="logo"
     style="display: flex; justify-content: space-between; align-items: center"
   >
-    <div
-      class="logo"
-      style="display: flex; justify-content: space-between; align-items: center"
-    >
-      <img src="/logo.png" alt="Logo Mão do Rei" style="width: 117px" />
-      <h1 style="display: inline-flex">Mão do Rei</h1>
-    </div>
-    <div>
+    <img src="/logo.png" alt="Logo Mão do Rei" style="width: 117px" />
+    <h1 style="display: inline-flex">Mão do Rei</h1>
+  </div>
+  <nav>
+    <!-- <div id="notLogado" style="display: block">
       <a href="/login" style="display: flex">Login |</a>
       <a href="/cadastro" style="display: flex">Cadastre-se</a>
-    </div>
-  </header>
-  <hr />
-  <div id="busca" style="display: inline">
-    <h4 style="display: inline-flex">Buscar</h4>
-    <input type="text" style="width: 500px" />
-  </div>
-  <hr />
-  <div
-    style="display: flex; justify-content: space-evenly; align-items: center"
-    id="menu superior"
-  >
-    <!-- <h4>Lançamentos</h4> -->
-    <a href="/filmes" style="display: inline-flex">Filmes</a>
-    <a href="/animes" style="display: inline-flex">Animes</a>
-    <a href="/series" style="display: inline-flex">Séries</a>
-  </div>
-  <hr />
-  <body>
-    <h3>PÁGINA DO USUÁRIO</h3>
-    <div id="perfil" style="display: inline-flex">
+    </div> -->
+    <div id="logado" style="display: none">
       <img
+        onmouseover="expandirMenu()"
+        onclick="fecharMenu()"
         src="blankProfilePhoto.png"
         alt="Foto de perfil - default"
-        style="width: 150px"
+        style="width: 75px"
+        class="fotoDePerfil"
       />
-      <div id="descriçao" style="padding-left: 10px">
-        <h3>Teste 2</h3>
-        <h4>Usuário desde 06/12/2022.</h4>
-        <a href="/favoritos">Visualizar lista de favoritos</a>
+      <div id="menuUsuario" style="display: none">
+        <ul>
+          <li><a href="/consulta?usuario=1">Teste X</a></li>
+          <li><a href="/favoritos">Favoritos</a></li>
+          <li onclick="sair()">Sair</li>
+        </ul>
       </div>
     </div>
-  </body>
-</head>
+  </nav>
+</header>
+<hr />
+<div id="busca" style="display: inline">
+  <h4 style="display: inline-flex">Buscar</h4>
+  <input type="text" style="width: 500px" />
+</div>
+<hr />
+<div
+  style="display: flex; justify-content: space-evenly; align-items: center"
+  id="menu superior"
+>
+  <a href="/" style="display: inline-flex">Home</a>
+  <a href="/lancamentos" style="display: inline-flex">Lançamentos</a>
+  <a href="/filmes" style="display: inline-flex">Filmes</a>
+  <a href="/animes" style="display: inline-flex">Animes</a>
+  <a href="/series" style="display: inline-flex">Séries</a>
+</div>
+<hr />
+<script src="/funcoes.js"></script>
+<body>
+  <h3>PÁGINA DO USUÁRIO</h3>
+  <div id="perfil" style="display: inline-flex">
+    <img
+      src="blankProfilePhoto.png"
+      alt="Foto de perfil - default"
+      style="width: 150px"
+    />
+    <div id="descriçao" style="padding-left: 10px">
+      <h3>Teste 2</h3>
+      <h4>Usuário desde 06/12/2022.</h4>
+      <a href="/favoritos">Visualizar lista de favoritos</a>
+    </div>
+  </div>
+</body>

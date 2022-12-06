@@ -1,137 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        
-       img{
-      max-width: 7%;
-      max-height: 7%;
-      margin-top: 0px;
-      padding: 0px 0px;
-  }
-  .menu-principal{
-      width: 100%;
-      background-color: #252323 ;
-      height: 70px;
-  } 
-  body{
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      background-color: darkgrey;
+      img {
+        max-width: 7%;
+        max-height: 7%;
+        margin-top: 0px;
+        padding: 0px 0px;
+      }
+      .menu-principal {
+        width: 100%;
+        background-color: #252323;
+        height: 70px;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background-color: darkgrey;
+      }
+      main {
+        margin: 0 auto;
+        width: 980px;
+        position: relative;
+      }
+      .logo {
+        padding: 1px;
+        width: 90%;
+        float: left;
+      }
+      .redes-sociais {
+        padding: 12px;
+      }
 
-  }
-  main{
-      margin:0 auto;
-      width: 980px;
-      position: relative;
-  }
-  .logo{
-      padding: 1px;
-      width: 90%;
-      float: left;
-  }
-  .redes-sociais{
-      padding: 12px;
-     
-  }
-  
- 
-  .menu{
-      width: 70%;
-      float: left;
-      
-  }
- 
+      .menu {
+        width: 70%;
+        float: left;
+      }
 
- 
- h1{
-  text-align: center;
-  font-style:initial;
-  font-size: 80px;
-  color: gold;
-  margin-top: 10px;
- }
+      h1 {
+        text-align: center;
+        font-style: initial;
+        font-size: 80px;
+        color: gold;
+        margin-top: 10px;
+      }
 
- h2{
-  text-align:center;
-  font-size: 20px;
- }
- .imgAjust{
-            width: 400px;
-            height: auto;
-        }
-        .imgFuture{
-            width: 500px;
-            height: auto;
-        }
-  </style>
-  <link>
-</head>
-<body>
-  <header class="menu-principal">
-      <main >
-          
-      <div class="heard-1">
-      <div class="logo">
-          <img src="/logo.png"width=60%>
+      h2 {
+        text-align: center;
+        font-size: 20px;
+      }
+      .imgAjust {
+        width: 400px;
+        height: auto;
+      }
+      .imgFuture {
+        width: 500px;
+        height: auto;
+      }
+      .header-2 {
+        background-color: ivory;
+        width: 100%;
+        border-bottom: 3px solid grey;
+      }
+    </style>
+  </head>
+  <script src="/funcoes.js"></script>
+  <body onload="adicionarFoto()">
+    <header class="menu-principal">
+      <main>
+        <div class="heard-1">
+          <div class="logo">
+            <img src="/logo.png" width="60%" />
+          </div>
+          <nav>
+            <div id="notLogado" style="display: block">
+              <a href="/login" style="display: flex; color: white">Login |</a>
+              <a href="/cadastro" style="display: flex; color: white"
+                >Cadastre-se</a
+              >
+            </div>
+            <div id="logado" style="display: none">
+              <img
+                onmouseover="expandirMenu()"
+                onclick="fecharMenu()"
+                src="blankProfilePhoto.png"
+                alt="Foto de perfil - default"
+                style="width: 75px"
+                class="fotoDePerfil"
+              />
+              <div id="menuUsuario" style="display: none">
+                <ul>
+                  <li><a href="/consulta?usuario=1">Teste X</a></li>
+                  <li><a href="/favoritos">Favoritos</a></li>
+                  <li onclick="sair()">Sair</li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <!-- <div class="redes-sociais">
+            <img src="/redes-sociais.png" width="60%" />
+          </div> -->
+        </div>
+      </main>
+    </header>
+    <main>
+      <!-- <div class="buscar">
+        <input
+          type="text"
+          name="buscar"
+          placeholder="encontre aqui oque procura "
+        />
+        buscar -->
+      <!-- </div> -->
+      <div class="header-2">
+        <div class="menu" width="60%">
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <!-- <li><a href="BUSCAR">BUSCAR</a></li> -->
+            <li><a href="/filmes">FILMES</a></li>
+            <li><a href="/animes">animes</a></li>
+            <li><a href="/lancamentos">LANÇAMENTOS</a></li>
+            <!-- <li><a href="/cadastro">CADASTRO</a></li> -->
+          </ul>
+        </div>
+        <!-- <div class="buscar" img src="/lupa.png">
+          <input class="" type="text" placeholder="digite aqui!!!!" /> buscar
+        </div> -->
+        <!-- <img src="/lupa.png" width="5%" /> -->
       </div>
-      <div class="redes-sociais">
-          <img src="/redes-sociais.png"width="60%">
-          
+      <h1>FAVORITOS</h1>
+      <div>
+        <h3>
+          <img src="/black clouver.jpg" width="100%" />
+          <a img src="imgs/estrela1.png" width="100%"></a>
+          <p>
+            <a href="/play">assitir agora!!!</a>
+          </p>
+          A história se centra em um jovem chamado Asta, nascido sem poder
+          mágico no reino de Clover (algo inédito), mas com sua ambição,
+          habilidades recém-descobertas e amigos, pretende tornar-se o próximo
+          Rei Mago. Capa do primeiro volume do mangá. Ação, Aventura,
+          Fantasia,Comédia.
+        </h3>
       </div>
-             
-
-</main>
-  </header>
-  <main>
-    <div class="buscar">
-       <input type="text" name="buscar"placeholder="encontre aqui oque procura " /> buscar 
-    </div>
-    <h1>FAVORITOS</h1>
-        <div>
-            <h3>
-                <img src="/black clouver.jpg"width=100%>
-                <a img src="imgs/estrela1.png"width=100%></a>
-                    <P>
-                        <a href="/play">assitir agora!!!</a>
-                    </P>
-                    A história se centra em um jovem chamado Asta, nascido sem poder mágico no reino de Clover (algo inédito), mas com sua ambição, habilidades recém-descobertas e amigos, pretende tornar-se o próximo Rei Mago. Capa do primeiro volume do mangá. Ação, Aventura, Fantasia,Comédia.
-            </h3>
-        </div>
-        <div>
-            <h3>
-                <a href=""></a>
-                <img src="/note.png"width=100%>
-                <P>
-                    <a href="/play">assitir agora!!!</a>
-                </P>
-                A história se centra em um jovem chamado Asta, nascido sem poder mágico no reino de Clover (algo inédito), mas com sua ambição, habilidades recém-descobertas e amigos, pretende tornar-se o próximo Rei Mago. Capa do primeiro volume do mangá. Ação, Aventura, Fantasia,Comédia.
-            </h3>
-        </div>
-        <div>
-            <h3>
-                <a href=""></a>
-                <img src="/one-piece.jpg"width=100%>
-                <P>
-                    <a href="/play">assitir agora!!!</a>
-                </P>A história se centra em um jovem chamado Asta, nascido sem poder mágico no reino de Clover (algo inédito), mas com sua ambição, habilidades recém-descobertas e amigos, pretende tornar-se o próximo Rei Mago. Capa do primeiro volume do mangá. Ação, Aventura, Fantasia,Comédia.
-            </h3>
-        </div>
-        <div>
-            <h3>
-                <a href=""></a>
-                <img src="/black clouver.jpg"width=100%>
-                <P>
-                    <a href="/play">assitir agora!!!</a>
-                </P>A história se centra em um jovem chamado Asta, nascido sem poder mágico no reino de Clover (algo inédito), mas com sua ambição, habilidades recém-descobertas e amigos, pretende tornar-se o próximo Rei Mago. Capa do primeiro volume do mangá. Ação, Aventura, Fantasia,Comédia.
-            </h3>
-        </div>
-  </main>
-</main>
-</body>
-</html>  
+      <div>
+        <h3>
+          <a href=""></a>
+          <img src="/note.png" width="100%" />
+          <p>
+            <a href="/play">assitir agora!!!</a>
+          </p>
+          A história se centra em um jovem chamado Asta, nascido sem poder
+          mágico no reino de Clover (algo inédito), mas com sua ambição,
+          habilidades recém-descobertas e amigos, pretende tornar-se o próximo
+          Rei Mago. Capa do primeiro volume do mangá. Ação, Aventura,
+          Fantasia,Comédia.
+        </h3>
+      </div>
+      <div>
+        <h3>
+          <a href=""></a>
+          <img src="/one-piece.jpg" width="100%" />
+          <p>
+            <a href="/play">assitir agora!!!</a>
+          </p>
+          A história se centra em um jovem chamado Asta, nascido sem poder
+          mágico no reino de Clover (algo inédito), mas com sua ambição,
+          habilidades recém-descobertas e amigos, pretende tornar-se o próximo
+          Rei Mago. Capa do primeiro volume do mangá. Ação, Aventura,
+          Fantasia,Comédia.
+        </h3>
+      </div>
+      <div>
+        <h3>
+          <a href=""></a>
+          <img src="/black clouver.jpg" width="100%" />
+          <p>
+            <a href="/play">assitir agora!!!</a>
+          </p>
+          A história se centra em um jovem chamado Asta, nascido sem poder
+          mágico no reino de Clover (algo inédito), mas com sua ambição,
+          habilidades recém-descobertas e amigos, pretende tornar-se o próximo
+          Rei Mago. Capa do primeiro volume do mangá. Ação, Aventura,
+          Fantasia,Comédia.
+        </h3>
+      </div>
+    </main>
+  </body>
+</html>

@@ -4,7 +4,6 @@
 // const localPasswordsList = getPasswordsList
 
 let url = new URL('http://localhost:4040/consulta?')
-//let params = new URLSearchParams(url.search)
 
 const localUsersList = []
 const localPasswordsList = []
@@ -89,8 +88,6 @@ function verificarLogin() {
 }
 
 function logar(nomeDigitado) {
-  //adicionar fotinha de perfil em todas as rotas
-  //"personalizar" userPage
   if (nomeDigitado == 'teste 1') {
     window.location.href = 'http://localhost:4040/consulta?usuario=1'
     // url.searchParams.set('usuario', 1)
@@ -103,6 +100,24 @@ function logar(nomeDigitado) {
     window.location.href = 'http://localhost:4040/consulta?usuario=3'
     // url.searchParams.set('usuario', 3)
   }
+
+  adicionarFoto()
+}
+
+function adicionarFoto() {
+  let a = document.getElementById('notLogado')
+  let b = document.getElementById('logado')
+
+  a.style.display = 'none'
+  b.style.display = 'block'
+
+  // if (getLogado() == true) {
+  //   a.style.display = 'none'
+  //   b.style.display = 'block'
+  // } else {
+  //   a.style.display = 'block'
+  //   b.style.display = 'none'
+  // }
 }
 
 function expandirMenu() {
@@ -115,4 +130,18 @@ function fecharMenu() {
   menuUsuario.style.display = 'none'
 }
 
-function sair() {}
+function sair() {
+  let a = document.getElementById('notLogado')
+  let b = document.getElementById('logado')
+
+  a.style.display = 'block'
+  b.style.display = 'none'
+
+  // if (getLogado() == false) {
+  //   a.style.display = 'block'
+  //   b.style.display = 'none'
+  // } else {
+  //   a.style.display = 'none'
+  //   b.style.display = 'block'
+  // }
+}

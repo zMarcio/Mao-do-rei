@@ -98,16 +98,39 @@
       }
     </style>
   </head>
-  <body>
+  <script src="/funcoes.js"></script>
+  <body onload="adicionarFoto()">
     <header class="menu-principal">
       <main>
         <div class="heard-1">
           <div class="logo">
             <img src="/logo.png" width="60%" />
           </div>
-          <div class="redes-sociais">
-            <img src="/redes-sociais.png" width="60%" />
-          </div>
+          <nav>
+            <div id="notLogado" style="display: block">
+              <a href="/login" style="display: flex; color: white">Login |</a>
+              <a href="/cadastro" style="display: flex; color: white"
+                >Cadastre-se</a
+              >
+            </div>
+            <div id="logado" style="display: none">
+              <img
+                onmouseover="expandirMenu()"
+                onclick="fecharMenu()"
+                src="blankProfilePhoto.png"
+                alt="Foto de perfil - default"
+                style="width: 75px"
+                class="fotoDePerfil"
+              />
+              <div id="menuUsuario" style="display: none">
+                <ul>
+                  <li><a href="/consulta?usuario=1">Teste X</a></li>
+                  <li><a href="/favoritos">Favoritos</a></li>
+                  <li onclick="sair()">Sair</li>
+                </ul>
+              </div>
+            </div>
+          </nav>
         </div>
       </main>
     </header>
@@ -116,17 +139,17 @@
         <div class="menu" width="60%">
           <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="BUSCAR">BUSCAR</a></li>
+            <!-- <li><a href="BUSCAR">BUSCAR</a></li> -->
             <li><a href="/filmes">FILMES</a></li>
             <li><a href="/animes">animes</a></li>
-            <li><a href="LANÇAMENTOS"></a>LANÇAMENTOS</li>
-            <li><a href="/cadastro">CADASTRO</a></li>
+            <li><a href="/lancamentos">LANÇAMENTOS</a></li>
+            <!-- <li><a href="/cadastro">CADASTRO</a></li> -->
           </ul>
         </div>
-        <div class="buscar" img src="/lupa.png">
+        <!-- <div class="buscar" img src="/lupa.png">
           <input class="" type="text" placeholder="digite aqui!!!!" /> buscar
-        </div>
-        <img src="/lupa.png" width="5%" />
+        </div> -->
+        <!-- <img src="/lupa.png" width="5%" /> -->
       </div>
     </main>
     <h1 class="anime">animes</h1>

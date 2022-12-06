@@ -18,61 +18,69 @@
         margin-block-end: 0;
       }
     </style>
-    <header
-      style="display: flex; justify-content: space-between; align-items: center"
-    >
-      <div
-        class="logo"
+    <body onload="adicionarFoto()">
+      <header
         style="
           display: flex;
           justify-content: space-between;
           align-items: center;
         "
       >
-        <img src="/logo.png" alt="Logo Mão do Rei" style="width: 117px" />
-        <h1 style="display: inline-flex">Mão do Rei</h1>
-      </div>
-      <div id="!logado" style="display: block">
-        <a href="/login" style="display: flex">Login |</a>
-        <a href="/cadastro" style="display: flex">Cadastre-se</a>
-      </div>
-      <div class="logado" style="display: none">
-        <img
-          onmouseover="expandirMenu()"
-          onclick="fecharMenu()"
-          src="blankProfilePhoto.png"
-          alt="Foto de perfil - default"
-          style="width: 75px"
-          class="fotoDePerfil"
-        />
-        <div id="menuUsuario" style="display: none">
-          <ul>
-            <li><a href="/consulta?usuario=1">Teste X</a></li>
-            <li><a href="/favoritos">Favoritos</a></li>
-            <li onclick="sair()">Sair</li>
-          </ul>
+        <div
+          class="logo"
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <img src="/logo.png" alt="Logo Mão do Rei" style="width: 117px" />
+          <h1 style="display: inline-flex">Mão do Rei</h1>
         </div>
+        <nav>
+          <div id="notLogado" style="display: block">
+            <a href="/login" style="display: flex">Login |</a>
+            <a href="/cadastro" style="display: flex">Cadastre-se</a>
+          </div>
+          <div id="logado" style="display: none">
+            <img
+              onmouseover="expandirMenu()"
+              onclick="fecharMenu()"
+              src="blankProfilePhoto.png"
+              alt="Foto de perfil - default"
+              style="width: 75px"
+              class="fotoDePerfil"
+            />
+            <div id="menuUsuario" style="display: none">
+              <ul>
+                <li><a href="/consulta?usuario=1">Teste X</a></li>
+                <li><a href="/favoritos">Favoritos</a></li>
+                <button onclick="sair()">Sair</button>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <script src="/funcoes.js"></script>
+      </header>
+      <hr />
+      <!-- <div id="busca" style="display: inline">
+        <h4 style="display: inline-flex">Buscar</h4>
+        <input type="text" style="width: 500px" />
+      </div> -->
+      <hr />
+      <h3>PÁGINA INICIAL</h3>
+      <div id="menu">
+        <a href="/animes" style="display: flex">Animes</a>
+        <a href="/filmes" style="display: flex">Filmes</a>
+        <a href="/series" style="display: flex">Séries</a>
+        <a href="/lancamentos" style="display: flex">Lançamentos</a>
+        <a href="/filmeslancamentos" style="display: flex"
+          >Filmes Lançamentos</a
+        >
+        <a href="/serielancamentos" style="display: flex">Séries Lançamentos</a>
+        <a href="/animelancamentos" style="display: flex">Animes Lançamentos</a>
       </div>
-    </header>
-    <hr />
-    <div id="busca" style="display: inline">
-      <h4 style="display: inline-flex">Buscar</h4>
-      <input type="text" style="width: 500px" />
-    </div>
-    <hr />
-    <h3>PÁGINA INICIAL</h3>
-    <div id="menu">
-      <a href="/lancamentos" style="display: flex;">Lançamentos</a>
-      <a href="/filmes" style="display: flex">Filmes</a>
-      <a href="/animes" style="display: flex">Animes</a>
-      <a href="/series" style="display: flex">Séries</a>
-    </div>
-    <hr />
-    <!-- <div id="cinemas">
-      <h3>Na sala de cinema tudo é mais emocionante!</h3>
-      <h4>Deseja encontrar cinemas perto de você? Clique aqui.</h4>
-    </div> -->
-    <script src="/funcoes.js"></script>
+      <hr />
+    </body>
   </head>
-  <body></body>
 </html>

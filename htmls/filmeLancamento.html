@@ -1,40 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filmes em Lançamento</title>
     <style>
-        .imgAjust {
-            width: 450px;
-            height: auto;
-        }
-        .imgAnime{
-            width: 450px;
-            height: auto;
-        }
+      .imgAjust {
+        width: 450px;
+        height: auto;
+      }
+      .imgAnime {
+        width: 450px;
+        height: auto;
+      }
+
+      div.logado ul {
+        list-style-type: none;
+        padding-inline-start: 10px;
+        margin-top: 5px;
+        background-color: whitesmoke;
+        margin-block-start: 0;
+      }
+
+      .fotoDePerfil {
+        margin-block-end: 0;
+      }
     </style>
-</head>
-<body>
-<div class="imgAjust">
-    <h1>Filmes</h1>
-    <hr>
-    <h2>A Mulher Rei</h2>
-    <h3>Em 1800, o general Nanisca treina um grupo de mulheres guerreiras para proteger o reino africano de Dahomey de um inimigo estrangeiro. </h3>
-    <img src="FilmesLancamento/MulherRei.jpg" alt="A Mulher Rei" class="imgAnime">
-    <hr>
-    <h2>Adão Negro</h2>
-    <h3>Adão Negro é o filme solo do anti-herói, baseado no personagem em quadrinhos Black Adam da DC Comics, grande antagonista de Shazam!, tendo no longa, sua história de origem explorada, e revelando seu passado de escravo no país Kahndaq.</h3>
-    <img src="FilmesLancamento/AdaoNegro.jpg" alt="Adão Negro" class="imgAnime">
-    <hr>
-    <h2>Pantera Negra - Wakanda para SEMPRE</h2>
-    <h3>Pantera Negra: Wakanda Para Sempre é a continuação do longa Pantera Negra, o mundo de Wakanda se expande. Após a morte do ator de T'Challa (Chadwick Boseman) o foco de Wakanda Para Sempre são os personagens em volta do Pantera Negra.</h3>
-    <img src="FilmesLancamento/wakanda.jpg" alt="Pantera Negra" class="imgAnime">
-    <hr>
-    <h2>One Piece Film: RED</h2>
-    <h3>Uta - a cantora mais amada do mundo. Sua voz, com a qual ela canta enquanto esconde sua verdadeira identidade, foi descrita como "de outro mundo". Ela aparecerá em público pela primeira vez em um show ao vivo.</h3>
-    <img src="FilmesLancamento/onepiece.jpg" alt="One Piece" class="imgAnime">
-</div>
-</body>
+    <header
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <div
+        class="logo"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <img src="/logo.png" alt="Logo Mão do Rei" style="width: 117px" />
+        <h1 style="display: inline-flex">Mão do Rei</h1>
+      </div>
+      <nav>
+        <div id="!logado" style="display: block">
+          <a href="/login" style="display: flex">Login |</a>
+          <a href="/cadastro" style="display: flex">Cadastre-se</a>
+        </div>
+        <div class="logado" style="display: none">
+          <img
+            onmouseover="expandirMenu()"
+            onclick="fecharMenu()"
+            src="blankProfilePhoto.png"
+            alt="Foto de perfil - default"
+            style="width: 75px"
+            class="fotoDePerfil"
+          />
+          <div id="menuUsuario" style="display: none">
+            <ul>
+              <li><a href="/consulta?usuario=1">Teste X</a></li>
+              <li><a href="/favoritos">Favoritos</a></li>
+              <li onclick="sair()">Sair</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <hr />
+    <div
+      style="display: flex; justify-content: space-evenly; align-items: center"
+      id="menu superior"
+    >
+      <a href="/" style="display: inline-flex">Home</a>
+      <a href="/lancamentos" style="display: inline-flex">Lançamentos</a>
+      <a href="/filmes" style="display: inline-flex">Filmes</a>
+      <a href="/animes" style="display: inline-flex">Animes</a>
+      <a href="/series" style="display: inline-flex">Séries</a>
+    </div>
+    <hr />
+  </head>
+  <script src="/funcoes.js"></script>
+  <body onload="adicionarFoto()">
+    <div class="imgAjust">
+      <h1>Filmes</h1>
+      <hr />
+      <h2>A Mulher Rei</h2>
+      <h3>
+        Em 1800, o general Nanisca treina um grupo de mulheres guerreiras para
+        proteger o reino africano de Dahomey de um inimigo estrangeiro.
+      </h3>
+      <img
+        src="FilmesLancamento/MulherRei.jpg"
+        alt="A Mulher Rei"
+        class="imgAnime"
+      />
+      <hr />
+      <h2>Adão Negro</h2>
+      <h3>
+        Adão Negro é o filme solo do anti-herói, baseado no personagem em
+        quadrinhos Black Adam da DC Comics, grande antagonista de Shazam!, tendo
+        no longa, sua história de origem explorada, e revelando seu passado de
+        escravo no país Kahndaq.
+      </h3>
+      <img
+        src="FilmesLancamento/AdaoNegro.jpg"
+        alt="Adão Negro"
+        class="imgAnime"
+      />
+      <hr />
+      <h2>Pantera Negra - Wakanda para SEMPRE</h2>
+      <h3>
+        Pantera Negra: Wakanda Para Sempre é a continuação do longa Pantera
+        Negra, o mundo de Wakanda se expande. Após a morte do ator de T'Challa
+        (Chadwick Boseman) o foco de Wakanda Para Sempre são os personagens em
+        volta do Pantera Negra.
+      </h3>
+      <img
+        src="FilmesLancamento/wakanda.jpg"
+        alt="Pantera Negra"
+        class="imgAnime"
+      />
+      <hr />
+      <h2>One Piece Film: RED</h2>
+      <h3>
+        Uta - a cantora mais amada do mundo. Sua voz, com a qual ela canta
+        enquanto esconde sua verdadeira identidade, foi descrita como "de outro
+        mundo". Ela aparecerá em público pela primeira vez em um show ao vivo.
+      </h3>
+      <img
+        src="FilmesLancamento/onepiece.jpg"
+        alt="One Piece"
+        class="imgAnime"
+      />
+    </div>
+  </body>
 </html>

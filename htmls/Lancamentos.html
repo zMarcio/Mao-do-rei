@@ -1,42 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lançamentos</title>
-<style>
-    .imgAjust {
+    <style>
+      .imgAjust {
         width: 450px;
         height: auto;
-    }
-    .imgAnime{
-            width: 450px;
-            height: auto;
-    }
-</style>
+      }
 
-</head>
-<body>
-    <h1>Lançamentos</h1>
-    <hr>
-    <h2>Vejam os destaques para 2023, <a href="/Destaques">Clicando aqui.</a></h2>
-    <div class="imgAjust">
-        <hr>
-        <h1>Filmes</h1>
-        <h2>A Mulher Rei</h2>
-        <h3>Em 1800, o general Nanisca treina um grupo de mulheres guerreiras para proteger o reino africano de Dahomey de um inimigo estrangeiro. <a href="/filmeslancamentos">Clique aqui para MAIS LANÇAMENTOS!</a></h3>
-        <a href="filmesLancamentos"></a>
-        <img src="FilmesLancamento/MulherRei.jpg" alt="A Mulher Rei" class="imgAnime">
-        <hr>
-        <h1>Animes</h1>
-        <h2>Bleach Sennen Kessen-Hen</h2>
-        <h3>O retorno de bleach, em seu último arco e o mais sangreto. <a href="/animelancamentos">Clique aqui para MAIS LANÇAMENTOS!</a></h3>
-        <img src="AnimesLancamentos/bleach.jpg" alt="Bleach Sennen Kessen-Hen" class="imgAnime">
-        <h1>Series</h1>
-        <h2>Wandinha</h2>
-        <h3>A familía mais assombrosa da televisão ganha um nova adaptação, focando só nas aventuras de Wandinha.<a href="/serielancamentos">Clique aqui para MAIS LANÇAMENTOS!</a></h3>
-        <img src="SeriesLancamentos/wandinha.webp" alt="Wandinha" class="imgAnime">
+      .imgAnime {
+        width: 450px;
+        height: auto;
+      }
+
+      div.logado ul {
+        list-style-type: none;
+        padding-inline-start: 10px;
+        margin-top: 5px;
+        background-color: whitesmoke;
+        margin-block-start: 0;
+      }
+
+      .fotoDePerfil {
+        margin-block-end: 0;
+      }
+    </style>
+  </head>
+  <script src="/funcoes.js"></script>
+  <body onload="adicionarFoto()">
+    <header
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <div
+        class="logo"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <img src="/logo.png" alt="Logo Mão do Rei" style="width: 117px" />
+        <h1 style="display: inline-flex">Mão do Rei</h1>
+      </div>
+      <nav>
+        <div id="notLogado" style="display: block">
+          <a href="/login" style="display: flex">Login |</a>
+          <a href="/cadastro" style="display: flex">Cadastre-se</a>
+        </div>
+        <div id="logado" style="display: none">
+          <img
+            onmouseover="expandirMenu()"
+            onclick="fecharMenu()"
+            src="blankProfilePhoto.png"
+            alt="Foto de perfil - default"
+            style="width: 75px"
+            class="fotoDePerfil"
+          />
+          <div id="menuUsuario" style="display: none">
+            <ul>
+              <li><a href="/consulta?usuario=1">Teste X</a></li>
+              <li><a href="/favoritos">Favoritos</a></li>
+              <li>
+                <button onclick="sair()">Sair</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <hr />
+    <div id="busca" style="display: inline">
+      <h4 style="display: inline-flex">Buscar</h4>
+      <input type="text" style="width: 500px" />
     </div>
-</body>
+    <hr />
+    <div
+      style="display: flex; justify-content: space-evenly; align-items: center"
+      id="menu superior"
+    >
+      <a href="/" style="display: inline-flex">Home</a>
+      <a href="/lancamentos" style="display: inline-flex">Lançamentos</a>
+      <a href="/filmes" style="display: inline-flex">Filmes</a>
+      <a href="/animes" style="display: inline-flex">Animes</a>
+      <a href="/series" style="display: inline-flex">Séries</a>
+    </div>
+    <hr />
+    <h1>Lançamentos</h1>
+    <hr />
+    <h2>
+      Vejam os destaques para 2023, <a href="/Destaques">Clicando aqui.</a>
+    </h2>
+    <div class="imgAjust">
+      <hr />
+      <h1>Filmes</h1>
+      <h2>A Mulher Rei</h2>
+      <h3>
+        Em 1800, o general Nanisca treina um grupo de mulheres guerreiras para
+        proteger o reino africano de Dahomey de um inimigo estrangeiro.
+        <a href="/filmeslancamentos">Clique aqui para MAIS LANÇAMENTOS!</a>
+      </h3>
+      <a href="filmesLancamentos"></a>
+      <img
+        src="FilmesLancamento/MulherRei.jpg"
+        alt="A Mulher Rei"
+        class="imgAnime"
+      />
+      <hr />
+      <h1>Animes</h1>
+      <h2>Bleach Sennen Kessen-Hen</h2>
+      <h3>
+        O retorno de bleach, em seu último arco e o mais sangreto.
+        <a href="/animelancamentos">Clique aqui para MAIS LANÇAMENTOS!</a>
+      </h3>
+      <img
+        src="AnimesLancamentos/bleach.jpg"
+        alt="Bleach Sennen Kessen-Hen"
+        class="imgAnime"
+      />
+      <h1>Series</h1>
+      <h2>Wandinha</h2>
+      <h3>
+        A familía mais assombrosa da televisão ganha um nova adaptação, focando
+        só nas aventuras de Wandinha.<a href="/serielancamentos"
+          >Clique aqui para MAIS LANÇAMENTOS!</a
+        >
+      </h3>
+      <img
+        src="SeriesLancamentos/wandinha.webp"
+        alt="Wandinha"
+        class="imgAnime"
+      />
+    </div>
+  </body>
 </html>
